@@ -10,48 +10,42 @@ header {
     position: sticky;
     top: 0;
     width: calc(100% - 32px);
-    z-index: 1000; 
+    z-index: 1000;
+    max-width: 100%;
 
-   
-    max-width: 100%; 
-}
-
-header img {
-    width: 100%; 
-    max-width: 310px; 
-    height: auto; 
-    cursor: pointer;
-}
-
-.btn {
-    display: flex;
-    gap: 16px;
-}
-
-.btn button {
-    border-radius: 12px;
-    background: rgb(116, 22, 116);
-    color: #ffffff;
-    height: 59px;
-    font-size: 20px;
-    padding: 0 20px; 
-}
-@media screen and (max-width:468px){
-    .btn button {
-        display: none;
-    }
-}
-@media (max-width: 768px) {
-  
-
-    header img {
-        max-width: 150px; 
+    img {
+        width: 100%;
+        max-width: 310px;
+        height: auto;
+        cursor: pointer;
     }
 
-    .btn button {
-        font-size: 10px; 
-        max-width: 50px; 
-        margin-right: 30px;
-       
+    .btn {
+        display: flex;
+        gap: 16px;
+
+        button {
+            border-radius: 12px;
+            background: rgb(116, 22, 116);
+            color: #ffffff;
+            font-size: 20px;
+            padding: 8px 20px;
+        }
+    }
+    @media (max-width: 620px) {
+
+        .btn {
+            padding: 0;
+            gap: 4px;
+            button {
+                font-size: 9px;
+                padding: 4px 8px;
+            }
+        }
+    
+        img {
+            max-width: 150px;
+        }
     }
 }
+
