@@ -1,0 +1,3 @@
+<ng-container *ngFor="let errorMessage of errorMessagesForm[validationName]">
+    <small class="it-error-message" *ngIf="formControlInputName.hasError(errorMessage.type)">{{ errorMessage.message }}</small>
+</ng-container>

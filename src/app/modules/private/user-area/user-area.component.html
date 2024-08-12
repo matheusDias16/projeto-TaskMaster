@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="btn-new-project">
+    <button (click)="openModalCreate()">
+      <img src="../../../../assets/add-36.png" alt="" /> Novo projeto
+    </button>
+  </div>
+
+  <section class="table-section">
+    <table mat-table [dataSource]="projects" class="mat-elevation-z8">
+      <ng-container class="posi-cont" matColumnDef="position" sticky="true">
+        <th class="posi" *matHeaderCellDef>N°</th>
+        <td *matCellDef="let element">{{ element.position }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="project">
+        <th class="proj" *matHeaderCellDef>Projetos</th>
+        <td *matCellDef="let element">{{ element.title }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="task">
+        <th class="tsk" *matHeaderCellDef>Tasks</th>
+        <td *matCellDef="let element">
+          {{ element.completedTasks }}/{{ element.tasks.length }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="action">
+        <th class="acao" *matHeaderCellDef>Ações</th>
+        <td *matCellDef="let element">
+          <button routerLink="/project-area/{{ element._id }}">
+            <img src="../../../../assets/visibility-24.png" alt="" />
+          </button>
+          <button (click)="openDeleteProjectModal(element._id)">
+            <img src="../../../../assets/delete-24.png" alt="" />
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </section>
+</div>

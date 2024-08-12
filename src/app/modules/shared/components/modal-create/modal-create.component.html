@@ -1,0 +1,70 @@
+<body>
+  <div class="title">
+    <h2>Criar novo projeto</h2>
+
+    <div class="content">
+      <p>Preencha os campos abaixo para prosseguir</p>
+    </div>
+  </div>
+
+  <form [formGroup]="formProject">
+    <div class="cont">
+      <section class="coluna">
+        <div class="form-field">
+          <label>Nome do projeto</label>
+          <input class="nome" type="text" formControlName="projectName" />
+        </div>
+
+        <div class="form-field">
+          <label>Descrição</label>
+          <textarea
+            class="desc"
+            placeholder="Descreva o seu projeto..."
+            type="text"
+            maxlength="300"
+            formControlName="description"
+            rows="4"
+          ></textarea>
+        </div>
+      </section>
+
+      <section class="coluna">
+        <div class="form-field">
+          <label>Tarefas</label>
+          <div class="task-container" formArrayName="tasks">
+            <div
+              class="task-field"
+              *ngFor="let task of tasks.controls; let i = index"
+              [formGroupName]="i"
+            >
+              <input class="nome" type="text" formControlName="title" [readOnly]="tasks.controls.length !== i + 1"/>
+              <img
+                *ngIf="tasks.controls.length === i + 1"
+                src="../../../../../assets/add-36.png"
+                alt="add"
+                (click)="addTask(i)"
+              />
+              <img
+                *ngIf="tasks.controls.length !== i + 1"
+                src="../../../../../assets/delete-24.png"
+                alt="remove"
+                (click)="removeTask(i)"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </form>
+  <mat-dialog-actions>
+    <div class="btn">
+      <button
+        mat-button
+        [disabled]="!checkFormValidity()"
+        (click)="createProject()"
+      >
+        Salvar
+      </button>
+    </div>
+  </mat-dialog-actions>
+</body>

@@ -1,0 +1,77 @@
+:host {
+  body {
+    width: 380px;
+    max-width: 100%;
+    margin: 0;
+    padding: 22px 0 0;
+    box-shadow: 0 2px 6px 0 #0000001a;
+
+    .content {
+      margin: 12px 0;
+      padding: 22px 0 0;
+      border-top: 1px solid #2f363d1a;
+    }
+
+    h2,
+    p {
+      padding: 0 22px;
+      text-align: left;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 1.4rem;
+      line-height: 1.4rem;
+      color: var(--title);
+      font-family: var(--font-semibold);
+    }
+
+    p {
+      font-size: 0.9rem;
+      line-height: 1.4rem;
+      color: var(--sub-title);
+    }
+  }
+
+  .mat-mdc-dialog-actions {
+    padding: 0 22px 22px;
+    justify-content: flex-end !important;
+    display: flex;
+    align-items: center;
+
+    button {
+      width: 90px;
+    }
+  }
+  .btn {
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+
+    button {
+      border: 1px solid #545776;
+      font-family: Poppins;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 21px;
+      text-align: center;
+      border-radius: 12px;
+      cursor: pointer;
+
+      padding: 8px;
+      width: 100px;
+    }
+
+    .outline-light{
+      background: white;
+
+      color: #545776;
+    }
+
+    .delete {
+      background: #ab6eed;
+      color: white;
+      border: none;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+<form [formGroup]="formGroupAula21">
+  <textarea
+    matInput
+    placeholder="Digite aqui seu texto"
+    type="text"
+    maxlength="300"
+    formControlName="comment"
+    rows="4"
+  ></textarea>
+  
+  <app-input-error-message
+    [formControlInputName]="formGroupAula21.controls.comment"
+    validationName="comment"
+  ></app-input-error-message>
+
+  <input
+    appCepMask
+    matInput
+    type="text"
+    placeholder="00000-000"
+    formControlName="cep"
+  />
+  
+  <app-input-error-message
+    [formControlInputName]="formGroupAula21.controls.cep"
+    validationName="cep"
+  ></app-input-error-message>
+
+  <button [disabled]="checkFormValidity()" (click)="submitForm()">
+    Submit
+  </button>
+</form>
+
+
+

@@ -1,0 +1,38 @@
+<!-- 
+ Links:
+https://rxjs.dev/deprecations/subscribe-arguments 
+https://www.youtube.com/shorts/_iXd0SWr3Sw
+https://rxjs.dev/api/operators/tap
+https://www.learnrxjs.io/learn-rxjs/operators/utility/do
+
+https://piyush132000.medium.com/mastering-the-rxjs-tap-operator-in-angular-real-life-examples-776ba8bedf15#:~:text=One%20of%20the%20fundamental%20operators,without%20modifying%20the%20stream%20itself.
+
+
+-->
+<div>
+  <section>
+    <label for="">Add produto</label>
+    <!-- Falar sobre 2 way data bind -->
+    <input
+      type="text"
+      [(ngModel)]="inputProduto"
+      (keyup.enter)="adicionarProduto()"
+    />
+
+    <!-- quando false, escondido, o componente é destruido, porém o observable ainda está na memória -->
+    @if(mostrarEsconder){
+    <div>
+      <!-- Comunicação realizada atravez de services -->
+      <app-carrinho />
+    </div>
+    }
+
+    <button (click)="mostrarEsconder = !mostrarEsconder">
+      Mostrar / esconder
+    </button>
+  </section>
+
+  <!-- <section>
+    <app-switch-map />
+  </section> -->
+</div>

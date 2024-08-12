@@ -1,0 +1,159 @@
+:host {
+  body {
+    max-width: 100%;
+    padding: 22px;
+    box-shadow: 0 2px 6px 0 #0000001a;
+    
+
+    .title {
+      .content {
+        font-family: Poppins;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 24px;
+        text-align: left;
+        color: rgb(179, 162, 162);
+      }
+
+      h2 {
+        font-family: Poppins;
+        font-size: 24px;
+        font-weight: 700;
+
+        text-align: left;
+        color: #545776;
+      }
+    }
+
+    h2,
+    p {
+      padding: 0 22px;
+      text-align: left;
+    }
+
+    p {
+      font-size: 0.9rem;
+      line-height: 1.4rem;
+      color: var(--sub-title);
+    }
+  }
+}
+
+.cont {
+  padding: 22px;
+  display: flex;
+  gap: 60px;
+
+  .coluna {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form-field {
+    display: flex;
+    flex-direction: column;
+   
+.task-container{
+  max-height: 280px;
+  overflow-y: auto;
+}
+
+    label {
+      font-family: Poppins;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 24px;
+      text-align: left;
+      color: #545776;
+      padding-top: 20px;
+      padding-bottom: 3px;
+
+    }
+
+    .nome {
+      background: #94bbe91a;
+      border: 1px solid #94bbe94d;
+      border-radius: 8px;
+      width: 200px;
+      height: 30px;
+      font-family: Poppins;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 24px;
+      text-align: left;
+      
+
+    }
+
+    .desc {
+      background: #94bbe91a;
+      border: 1px solid #94bbe94d;
+      border-radius: 8px;
+      max-width: 200px;
+      height: 200px;
+      font-family: Poppins;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 24px;
+      text-align: left;
+
+    }
+
+    .task-field {
+      display: flex;
+      align-items: center;
+      
+
+      .nome {
+        width: 200px;
+        height: 30px;
+        padding-left: 20px;
+        margin-bottom: 5px;
+      }
+      img {
+        width: 24px;
+        height: 24px;
+        position: relative;
+        left: -34px;
+        cursor: pointer;
+      }
+
+    }
+  }
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+
+  button {
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 21px;
+    text-align: center;
+    cursor: pointer;
+
+    background: #ab6eed;
+    color: white;
+
+    width: 340px;
+    height: 40px;
+    border-radius: 24px;
+    border: none;
+  }
+
+  .outline-light {
+    background: white;
+
+    color: #545776;
+  }
+
+  .delete {
+    background: #ab6eed;
+    color: white;
+    border: none;
+  }
+}

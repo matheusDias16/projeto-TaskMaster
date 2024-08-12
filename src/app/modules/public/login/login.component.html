@@ -1,0 +1,36 @@
+<section>
+    <div class="contLogin" >
+      <div class="header-form">
+      <h1>Logar-se ao <b><img src="../../../../assets/logo (1).png" alt=""></b> </h1>
+    </div>
+
+      <form [formGroup]="formLogin" >
+        <div class="contInput">
+          <label>
+            <span>
+              E-mail
+            </span>
+            <input type="email" formControlName="email">
+          </label>
+        </div>
+  
+        <div class="contInput">
+          <label>
+            <span>
+              Senha
+            </span>
+            <input type="password" formControlName="senha">
+          </label>
+          <a  routerLink="/forgotPassword" class="esqueceu">Esqueceu a senha?</a> 
+        </div>
+      </form>
+  
+      <button class="btn" type="button" (click)="login()">
+        Entrar
+      </button>
+
+      <p class="conta">Ainda não tem uma conta? Crie <a class="criar" *ngIf="!this.router.url.includes('/signup')" routerLink="/signup">aqui</a></p>
+  
+      
+    </div>
+  </section>    

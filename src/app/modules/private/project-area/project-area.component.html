@@ -1,0 +1,106 @@
+<div class="cont">
+  <p>{{ this.project ? this.project.title : "" }}</p>
+
+  <div class="novo">
+    <button (click)="createTask()">
+      <img src="../../../../assets/add-36.png" alt="" /> Nova Task
+    </button>
+  </div>
+
+  <div class="quadro" cdkDropListGroup>
+    <div class="example-container">
+      <h2>A fazer</h2>
+
+      <div
+        class="example-list"
+        cdkDropList
+        [cdkDropListData]="todo"
+        (cdkDropListDropped)="drop($event, 'todo')"
+      >
+        @for (item of todo; track item) {
+        <div class="example-box" cdkDrag>
+          @if (editTaskId !== item._id) {
+          {{ item.title }}
+          <div class="imagem">
+            <img
+              src="../../../../assets/edit-24.png"
+              alt="edit"
+              (click)="editTask(item)"
+            />
+            <img
+              src="../../../../assets/delete-24.png "
+              alt="add"
+              (click)="openDeleteProjectModal(item._id)"
+            />
+          </div>
+          } @else {
+          <input type="text" [(ngModel)]="taskTitle" />
+          <div class="imagem">
+            <img
+              src="../../../../assets/check-24.png"
+              alt="edit"
+              (click)="
+                saveTask(editTaskId === 'create' ? false : true, item._id)
+              "
+            />
+            <img
+              src="../../../../assets/cancel-24.png"
+              alt="cancel"
+              (click)="cancelEdit()"
+            />
+          </div>
+          }
+        </div>
+        }
+      </div>
+    </div>
+
+    <div class="separa"></div>
+
+    <div class="example-container">
+      <h2>Feito</h2>
+      <div
+        class="example-list"
+        cdkDropList
+        [cdkDropListData]="done"
+        (cdkDropListDropped)="drop($event, 'done')"
+      >
+        @for (item of done; track item) {
+        <div class="example-box" cdkDrag>
+          @if (editTaskId !== item._id) {
+          {{ item.title }}
+          <div class="imagem">
+            <img
+              src="../../../../assets/edit-24.png"
+              alt="edit"
+              (click)="editTask(item)"
+            />
+            <img
+              src="../../../../assets/delete-24.png "
+              alt="add"
+              (click)="openDeleteProjectModal(item._id)"
+            />
+          </div>
+          } @else {
+          <input type="text" [(ngModel)]="taskTitle" />
+          <div class="imagem">
+            <img
+              src="../../../../assets/check-24.png"
+              alt="edit"
+              (click)="
+                saveTask(editTaskId === 'create' ? false : true, item._id)
+              "
+            />
+            <img
+              src="../../../../assets/cancel-24.png"
+              alt="cancel"
+              (click)="cancelEdit()"
+            />
+          </div>
+          }
+        </div>
+        }
+      </div>
+    </div>
+  </div>
+</div>

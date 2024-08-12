@@ -1,0 +1,9 @@
+<header>
+    <img routerLink="/" src="../../../../assets/logo (1).png" alt="">
+    <div class="btn">
+        <button mat-raised-button *ngIf="!this.router.url.includes('/login')" routerLink="/login">Login</button>
+        <button mat-raised-button *ngIf="!this.router.url.includes('/signup')" routerLink="/signup">Inscrever-se</button>
+    </div>
+</header>
+
+<router-outlet></router-outlet>
